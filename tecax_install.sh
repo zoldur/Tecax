@@ -7,7 +7,7 @@ COIN_DAEMON='tecaxd'
 COIN_CLI='tecax-cli'
 COIN_PATH='/usr/local/bin/'
 COIN_REPO='https://github.com/Tecax/Tecax.git'
-COIN_TGZ='https://github.com/zoldur/pyro/releases/download/0.12.1.3/pyro-01213.tgz'
+COIN_TGZ='https://github.com/zoldur/Tecax/releases/download/v1.0.0.0/tecax.tgz'
 COIN_ZIP=$(echo $COIN_REPO | awk -F'/' '{print $NF}')
 COIN_NAME='Tecax'
 COIN_PORT=6347
@@ -49,7 +49,8 @@ function download_node() {
   wget -q $COIN_TGZ
   tar xvzf $COIN_ZIP >/dev/null 2>&1
   compile_error
-  cp $COIN_DAEMON $COIN_CLI $COIN_PATH
+  cp $COIN_DAEMON $COIN_CLI $COIN_PATH 
+  chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI
   cd - 2>&1
   rm -r $TMP_FOLDER >/dev/null 2>&1
 }
