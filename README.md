@@ -1,5 +1,5 @@
 # Tec-AX
-Shell script to install a [Tec-AX Masternode](https://bitcointalk.org/index.php?topic=3152992.0) on a Linux server running Ubuntu 16.04. Use it on your own risk.
+Shell script to install a [Tec-AX Masternode](https://www.tecaxcrypto.com/) on a Linux server running Ubuntu 16.04. Use it on your own risk.
 
 ***
 ## Installation:
