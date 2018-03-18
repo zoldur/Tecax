@@ -46,13 +46,14 @@ function compile_node() {
 function download_node() {
   echo -e "Prepare to download $COIN_NAME binaries"
   cd $TMP_FOLDER
-  wget $COIN_TGZ
-  tar xvzf $COIN_ZIP 
+  wget -q $COIN_TGZ
+  tar xvzf $COIN_ZIP >/dev/null 2>&1
   compile_error
   cp $COIN_DAEMON $COIN_CLI $COIN_PATH 
   chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI
-  cd - 2>&1
+  cd - >/dev/null 2>&1
   rm -r $TMP_FOLDER >/dev/null 2>&1
+  clear
 }
 
 function ask_permission() {
