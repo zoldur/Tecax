@@ -8,7 +8,7 @@ COIN_CLI='tecax-cli'
 COIN_PATH='/usr/local/bin/'
 COIN_REPO='https://github.com/Tecax/Tecax.git'
 COIN_TGZ='https://github.com/zoldur/Tecax/releases/download/v1.0.0.0/tecax.tgz'
-COIN_ZIP=$(echo $COIN_REPO | awk -F'/' '{print $NF}')
+COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='Tecax'
 COIN_PORT=6347
 RPC_PORT=6346
@@ -46,8 +46,8 @@ function compile_node() {
 function download_node() {
   echo -e "Prepare to download $COIN_NAME binaries"
   cd $TMP_FOLDER
-  wget -q $COIN_TGZ
-  tar xvzf $COIN_ZIP >/dev/null 2>&1
+  wget $COIN_TGZ
+  tar xvzf $COIN_ZIP 
   compile_error
   cp $COIN_DAEMON $COIN_CLI $COIN_PATH 
   chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI
